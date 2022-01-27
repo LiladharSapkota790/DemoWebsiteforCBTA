@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DemoWebsiteforCBTA.Models.MembershipTypes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Names)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Names)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MembershipTypesId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MembershipTypesId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MembershipTypesId })
+        </td>
+    </tr>
+}
+
+</table>

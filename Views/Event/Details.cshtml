@@ -1,0 +1,82 @@
+﻿@model DemoWebsiteforCBTA.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventstartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventstartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventendDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventendDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventStartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventStartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventEndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventEndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuestSpeaker)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuestSpeaker)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Venue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Venue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

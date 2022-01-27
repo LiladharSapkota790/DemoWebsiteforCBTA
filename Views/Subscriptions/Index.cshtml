@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DemoWebsiteforCBTA.Models.Subscription>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.MFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MembershipTypes.Names)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubscriptionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CanceldDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Has_paid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.MFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MembershipTypes.Names)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubscriptionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoinedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanceldDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Has_paid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MembershipTypesId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MembershipTypesId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MembershipTypesId })
+        </td>
+    </tr>
+}
+
+</table>

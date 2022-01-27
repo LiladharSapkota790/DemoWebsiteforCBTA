@@ -1,0 +1,58 @@
+﻿@model DemoWebsiteforCBTA.Models.Comment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.MFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.MFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.PostTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.PostTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

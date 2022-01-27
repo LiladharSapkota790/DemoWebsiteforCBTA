@@ -1,0 +1,60 @@
+﻿@model DemoWebsiteforCBTA.Models.EmailModel
+
+@{
+    ViewBag.Title = "SendMail";
+}
+
+<h2>SendMail</h2>
+
+@using (Html.BeginForm("SendMail", "Home", FormMethod.Post, new {enctype= "multipart/form-data" }))
+            {
+<table>
+    <tr>
+        <td> To </td>
+        <td> @Html.TextBoxFor(model => model.To)</td>
+    </tr>
+
+    <tr>
+        <td> Subject </td>
+        <td> @Html.TextBoxFor(model => model.Subject)</td>
+    </tr>
+
+
+
+    <tr>
+        <td> Body </td>
+        <td> @Html.TextBoxFor(model => model.body)</td>
+    </tr>
+
+
+
+    <tr>
+        <td> File Attach </td>
+        <td> @Html.TextBoxFor(model => model.PostedFile, new { Type = "file" })</td>
+    </tr>
+
+
+    <tr>
+        <td> Your Email </td>
+        <td> @Html.TextBoxFor(model => model.email)</td>
+    </tr>
+
+    <tr>
+        <td> Password </td>
+        <td> @Html.TextBoxFor(model => model.Password, new { type = "password" })</td>
+    </tr>
+
+
+    <tr>
+        <td>  </td>
+        <td>
+            <input type="submit" value="Send" /> 
+        </td>
+    </tr>
+
+
+</table>
+<br />
+<span style="color:rebeccapurple"> @ViewBag.Sendmessage</span>
+
+            }

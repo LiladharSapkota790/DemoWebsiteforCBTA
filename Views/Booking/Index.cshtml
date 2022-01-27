@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DemoWebsiteforCBTA.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.MFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisteredTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Has_Paid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.MFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisteredTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Has_Paid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

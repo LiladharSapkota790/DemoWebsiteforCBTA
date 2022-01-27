@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DemoWebsiteforCBTA.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.MFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post.PostTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.MFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post.PostTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommentText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommentedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
+        </td>
+    </tr>
+}
+
+</table>
